@@ -1,0 +1,87 @@
+<?php
+	session_start();
+	include("config/conexion.php");
+	$find = array("'",'"','/','[',']','/*','*/','//','´');
+	$tabla = str_replace($find, '', $_POST["tabla"]);
+	$pregunta = str_replace($find, '', $_POST["campo"]);
+	$valor = str_replace($find, '', $_POST["valor"]);
+	switch($tabla){
+		case 'creaccion':
+			$Column = "";
+			$PreguntaSplit = explode('_',$pregunta);
+			$pregunta = $PreguntaSplit[1];
+			switch($valor[0]){
+				case '1':
+					$Column = "creal";
+					break;
+				case '2':
+					$Column = "cmotivacional";
+					break;
+			}
+			$query_consulta = mysqli_query($conexion, "SELECT * FROM wp_tmp_". $tabla ." WHERE solicitud_id = '". $_SESSION["tmp_id_solicitud"] ."' AND pregunta_id = '".$pregunta."'");
+			if(mysqli_num_rows($query_consulta) > 0){	
+				$query_guardar = mysqli_query($conexion, "UPDATE wp_tmp_". $tabla ." SET ".$Column." = '". $valor ."' WHERE solicitud_id = '". $_SESSION["tmp_id_solicitud"] ."' AND pregunta_id = '". $pregunta ."'");
+			} else {
+				$query_guardar = mysqli_query($conexion, "INSERT INTO wp_tmp_". $tabla ." (solicitud_id, pregunta_id, ".$Column.") VALUES('". $_SESSION["tmp_id_solicitud"] ."', '". $pregunta ."', '". $valor ."')");
+			}
+			break;
+		case 'eccs':
+			$row = $_POST['row'];
+			$Query = "SELECT * FROM wp_tmp_". $tabla ." WHERE solicitud_id = '". $_SESSION["tmp_id_solicitud"] ."' AND row = '".$row."'";
+			$query_consulta = mysqli_query($conexion,$Query);
+			if(mysqli_num_rows($query_consulta) > 0){	
+				$Query = "UPDATE wp_tmp_". $tabla ." SET ".$pregunta." = '". $valor ."' WHERE solicitud_id = '". $_SESSION["tmp_id_solicitud"] ."' AND row = '". $row."'";
+				$query_guardar = mysqli_query($conexion, $Query);
+			} else {
+				$Query = "INSERT INTO wp_tmp_". $tabla ." (solicitud_id, row, ".$pregunta.") VALUES('". $_SESSION["tmp_id_solicitud"] ."', '". $row."', '". $valor."')";
+				$query_guardar = mysqli_query($conexion, $Query);
+			}
+			break;
+		case 'confiabilidad':
+		case 'tangibilidad':
+		case 'cortesia':
+		case 'empatia':
+		case 'excepciones':
+		case 'informacion':
+		case 'consultoria':
+		case 'capacidadrespuesta':
+		case 'competencias':
+		case 'credibilidad':
+		case 'custodia':
+		case 'garantias':
+		case 'proximidad':
+		case 'tiempoespera':
+		case 'localizacion':
+		case 'horarios':
+			$ArrayPregunta = explode("_",$pregunta);
+			switch($ArrayPregunta[0]){
+				case 'cds':
+					$tabla = "cdproducto";
+					break;
+				case 'cdc':
+					$tabla = "cdcompetencia";
+					break;
+				case 'vc':
+					$tabla = "vcproducto";
+					break;
+			}
+			$pregunta = $ArrayPregunta[1];
+			$Query = "SELECT * FROM wp_tmp_". $tabla ." WHERE solicitud_id = '". $_SESSION["tmp_id_solicitud"] ."' AND pregunta_id = '".$pregunta."'";
+			$query_consulta = mysqli_query($conexion,$Query);
+			if(mysqli_num_rows($query_consulta) > 0){	
+				$query_guardar = mysqli_query($conexion, "UPDATE wp_tmp_". $tabla ." SET respuesta = '". $valor ."' WHERE solicitud_id = '". $_SESSION["tmp_id_solicitud"] ."' AND pregunta_id = '". $pregunta ."'");
+			} else {
+				$query_guardar = mysqli_query($conexion, "INSERT INTO wp_tmp_". $tabla ." (solicitud_id, pregunta_id, respuesta) VALUES('". $_SESSION["tmp_id_solicitud"] ."', '". $pregunta ."', '". $valor ."')");
+			}
+			break;
+		default:
+			$query_consulta = mysqli_query($conexion, "SELECT * FROM wp_tmp_". $tabla ." WHERE solicitud_id = '". $_SESSION["tmp_id_solicitud"] ."' AND pregunta_id = '".$pregunta."'");
+			if(mysqli_num_rows($query_consulta) > 0){	
+				$query_guardar = mysqli_query($conexion, "UPDATE wp_tmp_". $tabla ." SET respuesta = '". $valor ."' WHERE solicitud_id = '". $_SESSION["tmp_id_solicitud"] ."' AND pregunta_id = '". $pregunta ."'");
+			} else {
+				$query_guardar = mysqli_query($conexion, "INSERT INTO wp_tmp_". $tabla ." (solicitud_id, pregunta_id, respuesta) VALUES('". $_SESSION["tmp_id_solicitud"] ."', '". $pregunta ."', '". $valor ."')");
+			}
+			break;
+	}
+	
+?>

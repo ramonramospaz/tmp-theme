@@ -1,0 +1,68 @@
+page{
+    display: block;
+}
+page_header{
+    width: 100%;
+    display: none !important;
+}
+table {
+    background-color: transparent;
+    margin: 15px 75px;
+    padding: 5px 10px;
+    width: 800px;
+    min-width: 800px;
+    max-width: 800px;
+    display: block;
+    box-sizing: border-box;
+}
+table tr {
+    width: 615px;
+}
+table th, table td {
+    width: 50%;
+    text-align: left;
+    padding: 5px;
+    vertical-align: top;
+    border-bottom: 2px solid #eceeef;
+}
+table.OneTDTH th, table.OneTDTH td {
+    width: 100%;
+}/*
+.cols4 td {
+    width: 200px ;
+}
+.cols3 td {
+    width: 265px ;
+}*/
+
+
+table th {
+    background: #313c41;
+    color: #ffffff;
+    vertical-align: bottom;
+    border-bottom: inherit;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+th.principal, td.principal, tr.principal{
+    background-color: #f68d1d;color: #ffffff;
+}
+td.cols5 {
+    width: 90px;
+}
+td.cols4 {
+    width: 360px;
+}
+td.cols4a {
+    width: 500px;
+}
+td.cols3 {
+    width: 183px;
+}
+.headerReport{
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #dbdcdd;
+    color: #313c41;
+}

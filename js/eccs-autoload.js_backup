@@ -1,0 +1,29 @@
+$(document).ready(function(){	
+
+	var tabla = $("form").attr("id");
+	var scntDiv = $('#p_scents');
+	$.ajax({
+		type: "POST",
+		url: "../wp-content/themes/tmp-theme/eccs-consulta.php",
+		data: { tabla:tabla },
+		dataType: "html",
+		success: function(data){
+			var datos = JSON.parse(data);
+			var row = 1;
+			$.each(datos, function(key, value) {
+				var Pregunta = value.Pregunta;
+				var Respuesta = value.Respuesta;
+				if(row > 1){
+					$('<div class="group"><h2><label for="p_scnts"><input type="text" class="p_scnt" size="20" row="'+row+'" name="eccs[]" value="" placeholder="Elemento complementario clave de su servicio" /></label> <button type="button" class="rmvScnt">Eliminar</button></h2><h3><select row="'+row+'" name="ieccs[]"><option value="1">Poco importante</option><option value="2">Ligeramente importante</option><option value="3">Medianamente importante</option><option value="4">Muy importante</option><option value="5">Sumamente importante</option><option value="6">No aplica</option><option value="7">No sabe</option></select></h3></div>').appendTo(scntDiv);
+				}
+				$("input[row='"+row+"']").val(Pregunta);
+				$("select[row='"+row+"']").val(Respuesta);
+				row++;
+			});
+			$("#row").val(row);
+		},
+		error: function(){
+			alert("error");
+		}
+	});
+});

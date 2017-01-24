@@ -1,0 +1,24 @@
+$(document).ready(function(){
+	$("html").on("change",'input[type="radio"], input[type="text"], input[type="checkbox"], textarea, select',function(){
+		var element = $(this);
+		var name = element.attr("name");
+		var valor = element.val();
+		var tabla = element.closest("form").attr("id");
+
+		// para tabla eccs
+			var row = element.attr("row");
+		$.ajax({
+			type: "POST",
+			url: "../wp-content/themes/tmp-theme/autosave.php",
+			data: { tabla:tabla, campo:name, valor:valor, row:row},
+			dataType: "html",
+			beforeSend: function(){
+				$(".saving").html("<p>Guardando <img src='../wp-content/themes/tmp-theme/icons/ajax-loader.gif'></p>");
+				$(".saving").css("display","block");
+			},
+			success: function(resultado){
+				setTimeout(function() { $(".saving").fadeOut(500); }, 1500);
+			}
+		});
+	});
+});
