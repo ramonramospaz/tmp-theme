@@ -22,7 +22,8 @@
 		$y = 0;
 		for($i=0;$i<$n;$i++){
 			if(($array[$array_keys[$i]] == '3') || ($array[$array_keys[$i]] == '4') || ($array[$array_keys[$i]] == '5')){
-				$Query = "SELECT id, pregunta FROM wp_tmp_preguntas WHERE name = '".$array_keys[$i]."'";
+				$Idioma=qtranxf_getLanguage();
+				$Query = "SELECT id, pregunta FROM wp_tmp_preguntas WHERE name = '".$array_keys[$i]."' and idioma='".$Idioma."'";
 				$query_preguntas = mysqli_query($conexion, $Query);
 				if(mysqli_num_rows($query_preguntas) > 0){
 
