@@ -1,10 +1,5 @@
-<?php /* Template Name: About */ ?>
+<?php /* Template Name: Mis Servicios de Asesoria */ ?>
 <?php get_header(); ?>
-	<section id="h_about">
-		<div class="wrapper">
-			<?php echo get_the_post_thumbnail(); ?>
-		</div>
-	</section>
 
 	<section class="cuestionario mresize">
 
