@@ -34,7 +34,7 @@ session_start();
 				<h2>Diagnósticos</h2>
 				<?php } ?>
 				<?php if(qtranxf_getLanguage()=="en"){ ?>
-				<h2>Diagnósticos</h2>
+				<h2>Diagnostics</h2>
 				<?php } ?>
 
 				<?php query_posts('category_name=diagnosticos&showposts=10'); ?>
