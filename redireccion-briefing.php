@@ -52,7 +52,7 @@ if($_SESSION["tmp_id_servicio"] == 25){
 
 } else if($_SESSION["tmp_id_servicio"] == 40){
 
-	header("Location: ../informacion-objetivos-participacion");
+	header("Location: ../identificacion-competencia");
 
 
 } else if($_SESSION["tmp_id_servicio"] == 1048){
