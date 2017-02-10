@@ -56,7 +56,12 @@ if(!isset($_SESSION["tmp_id_user"]) && !isset($_SESSION["tmp_user_nombre"]) && !
 	</div>
 
 	<section id="intro">
+		<?php if(qtranxf_getLanguage()=="es"){ ?>
 		<h2>Tu asesor<br/><strong> online</strong><br/><span>de Negocios</span></h2>
+		<?php } ?>
+		<?php if(qtranxf_getLanguage()=="en"){ ?>
+		<h2>Your online<br/><strong> business</strong><br/><span> Advisor</span></h2>
+		<?php } ?>
 	</section>
 	
 </section>

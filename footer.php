@@ -1,6 +1,10 @@
 	<section id="brand">
-
+		<?php if(qtranxf_getLanguage()=="es"){ ?>
 		<p class="wrapper">The marketing planner es un producto exclusivo de &nbsp;<img src="<?php echo get_template_directory_uri(); ?>/img/branding-sound-system.png"></p>
+		<?php } ?>
+		<?php if(qtranxf_getLanguage()=="en"){ ?>
+		<p class="wrapper">The marketing planner is an exclusive product of &nbsp;<img src="<?php echo get_template_directory_uri(); ?>/img/branding-sound-system.png"></p>
+		<?php } ?>
 	</section>
 	<section id="sitemap">
 		<div class="wrapper">
