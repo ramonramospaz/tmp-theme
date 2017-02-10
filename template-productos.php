@@ -17,16 +17,26 @@ session_start();
 
 			<section id="diseños">
 
+				<?php if(qtranxf_getLanguage()=="es"){ ?>
 				<h2>Planes</h2>
-			
+				<?php } ?>
+				<?php if(qtranxf_getLanguage()=="en"){ ?>
+				<h2>Plans</h2>
+				<?php } ?>
+
 				<?php query_posts('category_name=planes&showposts=10'); ?>
 				<?php get_template_part('loop'); ?>
 			</section>
 
 			<section id="diagnosticos">
 
+				<?php if(qtranxf_getLanguage()=="es"){ ?>
 				<h2>Diagnósticos</h2>
-			
+				<?php } ?>
+				<?php if(qtranxf_getLanguage()=="en"){ ?>
+				<h2>Diagnósticos</h2>
+				<?php } ?>
+
 				<?php query_posts('category_name=diagnosticos&showposts=10'); ?>
 				<?php get_template_part('loop'); ?>
 			</section>
