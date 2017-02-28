@@ -80,7 +80,15 @@
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2" class="terms"><input type="checkbox" class="required" name="terminos" id="terminos" value="1"><label for="terminos">Acepto los <a href="/terms-and-conditions" rel="shadowbox;width=1200" class="shadowbox" target="_self">terminos y condiciones</a> de themarketingplanner.com</label><p class="clear"></p></td>
+						<script type="text/javascript">
+							function validador(){
+								if(document.getElementById('payme').style.display=='block')
+									document.getElementById('payme').style.display='none';
+								else
+									document.getElementById('payme').style.display='block';
+							}
+						</script>
+						<td colspan="2" class="terms"><input type="checkbox" class="required" name="terminos" id="terminos" value="1" onclick="validador()"><label for="terminos">Acepto los <a href="/terms-and-conditions" rel="shadowbox;width=1200" class="shadowbox" target="_self">terminos y condiciones</a> de themarketingplanner.com</label><p class="clear"></p></td>
 					</tr>
 					<tr>						
 						<!--<td colspan="2"><p><?php the_field('paypal_button'); ?></p></td>-->
@@ -90,10 +98,11 @@
 								$_SESSION['payment_promo_discount'] = "0";
 								$_SESSION['payment_amount'] = $_SESSION['payment_precio_servicio'];
 							?>
-							<p>
+							<p><div id="payme" style="display: none">
 								<a href="/paypal-pay">
 									<img src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/gold-pill-paypal-44px.png" alt="PayPal">
 								</a>
+								</div>
 							</p>
 						</td>
 					</tr>
