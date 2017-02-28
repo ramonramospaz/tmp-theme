@@ -127,9 +127,9 @@
 					<p><label><input type="radio" name="ciclo" value="4">Declinación (mucho tiempo en el mercado y ventas en declinacion)</label></p>
 					<p><label><input type="radio" name="ciclo" value="5">No sabe / No contesta</label></p>
 
-					<h3>Describa las caracteristicas generales del producto (haga enfasis en los aspectos positivos y negativos del producto).</h3>
+					<!-- <h3>Describa las caracteristicas generales del producto (haga enfasis en los aspectos positivos y negativos del producto).</h3> -->
 
-					<p><textarea name="caracteristicas"></textarea></p>
+					<!-- <p><textarea name="caracteristicas"></textarea></p> -->
 
 					<?php /*<h3>Inserte imagenes del producto</h3>
 					<p><input type="file" name="imagenes"></p>*/?>
@@ -144,7 +144,7 @@
 
 					<p><label><input type="radio" class="required" name="tbase" value="1">Individual (personas)</label></p>
 					<p><label><input type="radio" name="tbase" value="2">Organizacional (empresas, comercios, gobierno, fabricas o industrias)</label></p>
-					<p><label><input type="radio" name="tbase" value="3">Mixto (personas y organizaciones)</label></p>
+					<p>Para casos de consumidores mixtos (individual y organizacional), debe adquirir cada servicio por separado.</p>
 
 					<h2>DATOS GENERALES DE LA COMPETENCIA</h2>					
 
@@ -180,15 +180,15 @@
 					<p><input type="text" name="cprincipal"></p>					
 					
 
-					<h2>PLANTEAMIENTO DEL CASO</h2>	
+					<!-- <h2>PLANTEAMIENTO DEL CASO</h2>	 -->
 
-					<h3>SITUACIÓN PROBLEMA: Describa la situación asociada a su marca o producto, por la cual usted esta haciendo esta solicitud a THE MARKETING PLANNER.</h3>
+					<!-- <h3>SITUACIÓN PROBLEMA: Describa la situación asociada a su marca o producto, por la cual usted esta haciendo esta solicitud a THE MARKETING PLANNER.</h3> -->
 
-					<textarea name="situacion"></textarea>
+					<!-- <textarea name="situacion"></textarea> -->
 
-					<h3>SOLUCIÓN REQUERIDA: Describa que tipo de solución o aporte espera usted de parte de THE MARKETING PLANNER con relación a la situación planteada.</h3>
+					<!-- <h3>SOLUCIÓN REQUERIDA: Describa que tipo de solución o aporte espera usted de parte de THE MARKETING PLANNER con relación a la situación planteada.</h3> -->
 
-					<textarea name="solucion"></textarea>			
+					<!-- <textarea name="solucion"></textarea>			 -->
 				
 				<p class="clear"></p>
 
@@ -286,9 +286,9 @@
 					<p><label><input type="radio" name="ciclo" value="4">Decrease (long time in the market and sales in decrease)</label></p>
 					<p><label><input type="radio" name="ciclo" value="5">Don't know / No answer</label></p>
 
-					<h3>Describe the General characteristics of the product (make an emphasis on the positive and negative aspects of the product). </h3>
+					<!-- <h3>Describe the General characteristics of the product (make an emphasis on the positive and negative aspects of the product). </h3> -->
 
-					<p><textarea name="caracteristicas"></textarea></p>
+					<!-- <p><textarea name="caracteristicas"></textarea></p> -->
 
 					<?php /*<h3>Inserte imagenes del producto</h3>
 					<p><input type="file" name="imagenes"></p>*/?>
@@ -303,7 +303,7 @@
 
 					<p><label><input type="radio" class="required" name="tbase" value="1">Individual (people)</label></p>
 					<p><label><input type="radio" name="tbase" value="2">Organizational (companies, businesses, Government, factories or industries)</label></p>
-					<p><label><input type="radio" name="tbase" value="3">Mixed (individuals and organizations)</label></p>
+					<p>For mixed consumers (individual and organizational), you must purchase each service separately.</p>
 
 					<h2>GENERAL DATA OF THE COMPETITION</h2>					
 
@@ -339,15 +339,15 @@
 					<p><input type="text" name="cprincipal"></p>					
 					
 
-					<h2>APPROACH TO THE CASE</h2>	
+					<!-- <h2>APPROACH TO THE CASE</h2>	 -->
 
-					<h3>PROBLEM SITUATION: Describe the situation associated with your brand or product, for which you are making this request to THE MARKETING PLANNER. </h3>
+					<!-- <h3>PROBLEM SITUATION: Describe the situation associated with your brand or product, for which you are making this request to THE MARKETING PLANNER. </h3> -->
 
-					<textarea name="situacion"></textarea>
+					<!-- <textarea name="situacion"></textarea> -->
 
-					<h3>SOLUTION REQUIRED: Describe what type of solution or input that you expect from THE MARKETING PLANNER in relation to the situation.</h3>
+					<!-- <h3>SOLUTION REQUIRED: Describe what type of solution or input that you expect from THE MARKETING PLANNER in relation to the situation.</h3> -->
 
-					<textarea name="solucion"></textarea>			
+					<!-- <textarea name="solucion"></textarea>			 -->
 				
 				<p class="clear"></p>
 
