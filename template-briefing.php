@@ -353,7 +353,7 @@
 
 				<div class="saving"></div>
 
-				<input type="submit" name="siguiente" class="next" value="Siguiente"><br>
+				<input type="submit" name="siguiente" class="next" value="Next"><br>
 
 			</form>
 
