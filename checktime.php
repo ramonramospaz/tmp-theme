@@ -6,8 +6,10 @@
         //echo $now_dt->format('h:i:s') ."\n". $expire_dt->format('h:i:s');
         if(isset($_SESSION["tmp_id_user"])){
             if ($now_dt > $expire_dt) {
-                echo "Destroyed";
+                $_SESSION["BusyTime"]="";
                 unset($_SESSION["BusyTime"]);
+                echo "Destroyed";
+                
             }
         }
     }
