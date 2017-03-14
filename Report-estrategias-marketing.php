@@ -322,7 +322,7 @@
 				<th colspan="2" class="principal">2. FORMULACION DEL OBJETIVO DE MERCADEO</th>
 			</tr>
 			<tr>
-				<td><?php echo $Proposito . " en un " . $Porcentaje . " en un perioso de " . $Lapso . " meses."; ?></td>
+				<td><?php echo $Proposito . " en un " . $Porcentaje . " en un periodo de " . $Lapso . " meses."; ?></td>
 			</tr>
 		</table>
 
