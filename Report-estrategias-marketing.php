@@ -44,6 +44,9 @@
 		$IdentificacionDeObjetivosEstrategiasActualesMercadoClass->usuario_id = $_SESSION["tmp_id_user"];
 
 		// Se debe sustituir informacion general del mercado por identificacion de la competencia.
+		$IdentificacionDeLaCompetenciaClass = new IdentificacionDeLaCompetencia();
+		$IdentificacionDeLaCompetenciaClass->solicitud_id = $_SESSION["tmp_id_solicitud"]; 
+		$IdentificacionDeLaCompetenciaClass->usuario_id = $_SESSION["tmp_id_user"];
 		//$InformacionGeneralDelMercadoClass = new InformacionGeneralDelMercado();
 		//$InformacionGeneralDelMercadoClass->solicitud_id = $_SESSION["tmp_id_solicitud"];
 		//$InformacionGeneralDelMercadoClass->usuario_id = $_SESSION["tmp_id_user"];
@@ -69,6 +72,7 @@
 		$IdentificacionDeObjetivosEstrategiasActualesMercadoClass->GetDataReport();
 
 		//$InformacionGeneralDelMercadoClass->GetDataReport(); //Informacion General Del Mercado DATA
+		$IdentificacionDeLaCompetenciaClass->GetDataReport();
 
 		$CompetenciasDistintivasDeLaCompetenciaArray = $CompetenciasDistintivasDeLaCompetenciaClass->GetDataReport(); //Competencias Distintivas De Su Producto DATA
 		
@@ -203,7 +207,7 @@
 		</tr>
 		<tr>
 			<td>Necesidad Básica:</td>
-			<td></td>
+			<td><?php echo $BriefingsClass->necesidad; ?></td>
 		</tr>
 		<tr>
 			<td>Tipo de consumidor:</td>
@@ -283,28 +287,28 @@
 			<td>% Participación</td>
 		</tr>
 		<tr>
-			<td><?php //echo $InformacionGeneralDelMercadoClass->m1; ?></td>
-			<td><?php //echo $InformacionGeneralDelMercadoClass->pc1; ?>%</td>
+			<td><?php echo $IdentificacionDeLaCompetenciaClass->m1; ?></td>
+			<td><?php echo $IdentificacionDeLaCompetenciaClass->pc1; ?>%</td>
 		</tr>
 		<tr>
-			<td><?php //echo $InformacionGeneralDelMercadoClass->m2; ?></td>
-			<td><?php //echo $InformacionGeneralDelMercadoClass->pc2; ?>%</td>
+			<td><?php echo $IdentificacionDeLaCompetenciaClass->m2; ?></td>
+			<td><?php echo $IdentificacionDeLaCompetenciaClass->pc2; ?>%</td>
 		</tr>
 		<tr>
-			<td><?php //echo $InformacionGeneralDelMercadoClass->m3; ?></td>
-			<td><?php //echo $InformacionGeneralDelMercadoClass->pc3; ?>%</td>
+			<td><?php echo $IdentificacionDeLaCompetenciaClass->m3; ?></td>
+			<td><?php echo $IdentificacionDeLaCompetenciaClass->pc3; ?>%</td>
 		</tr>
 		<tr>
-			<td><?php //echo $InformacionGeneralDelMercadoClass->m4; ?></td>
-			<td><?php //echo $InformacionGeneralDelMercadoClass->pc4; ?>%</td>
+			<td><?php echo $IdentificacionDeLaCompetenciaClass->m4; ?></td>
+			<td><?php echo $IdentificacionDeLaCompetenciaClass->pc4; ?>%</td>
 		</tr>
 		<tr>
-			<td><?php //echo $InformacionGeneralDelMercadoClass->m5; ?></td>
-			<td><?php //echo $InformacionGeneralDelMercadoClass->pc5; ?>%</td>
+			<td><?php echo $IdentificacionDeLaCompetenciaClass->m5; ?></td>
+			<td><?php echo $IdentificacionDeLaCompetenciaClass->pc5; ?>%</td>
 		</tr>
 		<tr>
 			<td>Competencia Principal:</td>
-			<td><?php //echo $InformacionGeneralDelMercadoClass->m2; ?></td>
+			<td><?php echo $IdentificacionDeLaCompetenciaClass->m2; ?></td>
 		</tr>
 	</table>
 	<?php
