@@ -25,11 +25,13 @@
 		$array_keys = array_keys($array);
 		$n = count($array);
 		$y = 0;
+		$Idioma=qtranxf_getLanguage();
 		for($i=0;$i<$n;$i++){
 
 			if($array[$array_keys[$i]] == '4'){
 			$y++;
-			$query_preguntas = mysqli_query($conexion, "SELECT id, pregunta FROM wp_tmp_preguntas WHERE name = '".$array_keys[$i]."'");
+			$query_preguntas = mysqli_query($conexion, "SELECT id, pregunta FROM wp_tmp_preguntas WHERE name = '".$array_keys[$i]."' and 
+					idioma='".$Idioma."' and tipo=".$_SESSION["tmp_t_producto"]);
 				if(mysqli_num_rows($query_preguntas) > 0){
 
 					$row_preguntas = mysqli_fetch_assoc($query_preguntas);
@@ -44,7 +46,8 @@
 				}
 			}else if($array[$array_keys[$i]] == '5'){
 
-				$query_preguntas = mysqli_query($conexion, "SELECT id, pregunta FROM wp_tmp_preguntas WHERE name = '".$array_keys[$i]."'");
+				$query_preguntas = mysqli_query($conexion, "SELECT id, pregunta FROM wp_tmp_preguntas WHERE name = '".$array_keys[$i]."' and 
+					idioma='".$Idioma."' and tipo=".$_SESSION["tmp_t_producto"]);
 				if(mysqli_num_rows($query_preguntas) > 0){
 
 					$row_preguntas = mysqli_fetch_assoc($query_preguntas);

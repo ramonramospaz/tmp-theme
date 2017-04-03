@@ -40,7 +40,7 @@
 		for($i=0;$i<$n;$i++){
 			if(($array[$array_keys[$i]] == '4') || ($array[$array_keys[$i]] == '5')){
 				$query_preguntas = mysqli_query($conexion, "SELECT id, pregunta, rel FROM wp_tmp_preguntas WHERE name = '".$array_keys[$i]."' and 
-					idioma='".$Idioma."'");
+					idioma='".$Idioma."' and tipo=".$_SESSION["tmp_t_producto"]);
 				if(mysqli_num_rows($query_preguntas) > 0){
 
 					$row_preguntas = mysqli_fetch_assoc($query_preguntas);

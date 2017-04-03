@@ -11,7 +11,7 @@
 		header("Location: /payment");
 
 	}
-
+	//echo $_SESSION["tmp_t_producto"]; 
 	if($_SESSION["tmp_t_producto"] == 1){
 		$query_buscar = mysqli_query($conexion, "SELECT * FROM wp_tmp_iproductobienes INNER JOIN wp_tmp_ipreciobienes ON wp_tmp_iproductobienes.solicitud_id = wp_tmp_ipreciobienes.solicitud_id INNER JOIN wp_tmp_idistribucionbienes ON wp_tmp_iproductobienes.solicitud_id = wp_tmp_idistribucionbienes.solicitud_id INNER JOIN wp_tmp_ipromocion ON wp_tmp_iproductobienes.solicitud_id = wp_tmp_ipromocion.solicitud_id WHERE wp_tmp_iproductobienes.solicitud_id = '".$_SESSION["tmp_id_solicitud"]."'");
 
@@ -39,6 +39,7 @@
 			if(($array[$array_keys[$i]] == '4') || ($array[$array_keys[$i]] == '5')){
 				$query_preguntas = mysqli_query($conexion, "SELECT id, pregunta, rel FROM wp_tmp_preguntas WHERE name = '".$array_keys[$i]."' and 
 					idioma='".$Idioma."' and tipo=".$_SESSION["tmp_t_producto"]);
+				//echo "SELECT id, pregunta, rel FROM wp_tmp_preguntas WHERE name = '".$array_keys[$i]."' and idioma='".$Idioma."' and tipo=".$_SESSION["tmp_t_producto"];
 				if(mysqli_num_rows($query_preguntas) > 0){
 
 					$row_preguntas = mysqli_fetch_assoc($query_preguntas);

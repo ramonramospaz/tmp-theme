@@ -38,11 +38,11 @@
 		for($i=0;$i<$n;$i++){
 			if(($array[$array_keys[$i]] == '4') || ($array[$array_keys[$i]] == '5')){
 				$query_preguntas = mysqli_query($conexion, "SELECT id, pregunta, rel FROM wp_tmp_preguntas WHERE name = '".$array_keys[$i]."' and 
-					idioma='".$Idioma."'");
+					idioma='".$Idioma."' and tipo=".$_SESSION["tmp_t_producto"]);
 				if(mysqli_num_rows($query_preguntas) > 0){
 					$row_preguntas = mysqli_fetch_assoc($query_preguntas);
 					if($row_preguntas['rel'] != 0){
-						$QueryPregunta = "SELECT * from wp_tmp_preguntas WHERE id = '".$row_preguntas['rel']."'";
+						$QueryPregunta = "SELECT * from wp_tmp_preguntas WHERE id = '".$row_preguntas['rel']."' and tipo=".$_SESSION["tmp_t_producto"];
 						$PreguntaRel = mysqli_query($conexion, $QueryPregunta) or die(mysqli_error($conexion));
 						while($rowPreguntaRel = mysqli_fetch_assoc($PreguntaRel)){
 							if($Relacion != $rowPreguntaRel['id']){
